@@ -1,0 +1,31 @@
+
+
+<!--
+<form (submit)="submitForm()" #loginForm="ngForm">
+  <label><b>Email</b></label><br>
+  <input type="text" #email="ngModel" placeholder="Enter Email" [(ngModel)]="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" required><br>
+  <div style="color:red;" [hidden]="email.valid || email.pristine">
+    Please enter correct email id!!
+  </div><br>
+
+  <label><b>Password</b></label><br>
+  <input type="password" #password="ngModel" placeholder="Enter Password" [(ngModel)]="user.password" minlength="8" name="psw" required>
+  <div style="color:red;" [hidden]="password.valid || password.pristine">
+    Please enter correct password of minimum 8 characters!!
+  </div><br>
+  <button [disabled]="loginForm.invalid" type="submit">Login</button>
+</form>
+-->
+
+
+<div>
+  <form #loginForm = "ngForm" (submit)= submitForm()>
+    Email: <input required type="text" name="email" #email = "ngModel"  [(ngModel)]="emailId" title="email"><br>
+    <div [hidden]="email.pristine" *ngIf="email.invalid" >Email is not valid</div><br>
+    Password: <input required type="password" name="pswd"  minlength="5" #pass = "ngModel" [(ngModel)]="password" title="password">
+    <div [hidden]="pass.pristine" *ngIf="pass.invalid" >Password is not valid</div><br>
+    <button [disabled] = "loginForm.invalid" type="submit">Login</button>
+
+  </form>
+
+</div>

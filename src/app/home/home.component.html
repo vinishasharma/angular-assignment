@@ -1,0 +1,6 @@
+<h1>Youtube List</h1>
+<div>
+  <ul *ngFor = "let data of videoData" >
+    <li><app-display-youtube  [title] = 'data.snippet.title' [thumbnail]='data.snippet.thumbnails' [id] ='data.id.videoId' ></app-display-youtube> </li>
+  </ul>
+</div>
